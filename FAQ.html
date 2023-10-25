@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Footwear</title>
+    <link rel="shortcut icon" href="image/logo.png"> 
+     
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            margin: 0;
+            padding: 0;
+             
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(to right,#c72092 , #6c14d0);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(132, 126, 126, 0.1);
+            justify-content: center;
+            margin-top: 300px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .faq-item {
+            margin: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: "+";
+            margin-left: 10px;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: "-";
+        }
+
+        .faq-question:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+     
+    <div class="container">
+        <h1>FAQ - Shoe Store</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">1. How do I choose the right shoe size?</div>
+            <div class="faq-answer">
+                <p>Choosing the right shoe size is important for comfort. We recommend measuring your feet and using our size chart to find the perfect fit.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">2. What is your return policy?</div>
+            <div class="faq-answer">
+                <p>We offer a 30-day return policy for unused and undamaged shoes. Please check our return policy page for more details.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">3. How long does shipping take?</div>
+            <div class="faq-answer">
+                <p>Shipping times may vary, but most orders are delivered within 5-7 business days. You can track your order using the provided tracking number.</p>
+            </div>
+        </div>
+
+        <!-- Add more FAQ items as needed -->
+
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                item.classList.toggle('open');
+                answer.style.display = item.classList.contains('open') ? 'block' : 'none';
+            });
+        });
+    </script>
+    
+</body>
+</html>
